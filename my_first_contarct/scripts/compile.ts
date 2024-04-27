@@ -2,6 +2,7 @@ import * as fs from 'fs';
 import process from 'process';
 import { Cell } from 'ton-core';
 import { compileFunc } from "@ton-community/func-js";
+import { Address } from 'ton-core';
 
 async function compileScript() {
 
@@ -39,6 +40,9 @@ async function compileScript() {
     );
 
     console.log(" - The compiled code is saved to: " + hexArtifact);
+
+    const address1 = Address.parse('1:a3935861f79daf59a13d6d182e1640210c02f98e3df18fda74b8f5ab141abf18');
+    console.log(address1.toString());
 }
 
 compileScript();
